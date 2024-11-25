@@ -5,8 +5,8 @@ Shopify and WooCommerce are two of the most popular e-commerce platforms designe
 # 1. Products
 •	Definition: The core element of any e-commerce platform, representing items available for purchase in the store. Products can be physical goods, digital downloads, or services.
 # •Key Components:
-## o	Title: The product’s name.
-## o	Description: Detailed information about the product.
+### o	Title: The product’s name.
+### o	Description: Detailed information about the product.
 ## o	Product Images/Videos: Visuals showcasing the product.
 o	Price: The cost of the product, often including options for sales or discounts.
 o	SKU (Stock Keeping Unit): A unique identifier for each product, useful for inventory management.
