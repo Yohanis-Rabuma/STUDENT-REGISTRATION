@@ -1,5 +1,4 @@
-                         
-    # Shopify and WooCommerce 
+                          # Shopify and WooCommerce 
  
 Shopify and WooCommerce are two of the most popular e-commerce platforms designed to help users create and manage online stores. Both platforms focus on providing tools to showcase, organize, and sell products effectively. Here’s a deeper breakdown of the key structures they use:
 ## Products
