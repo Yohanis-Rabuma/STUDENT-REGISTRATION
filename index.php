@@ -113,3 +113,91 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+    <form id="registrationForm" method="POST" action="">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" value="<?php echo $fullname; ?>" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" value="<?php echo $email; ?>" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" value="<?php echo $phone; ?>" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male" <?php if ($gender == 'male') echo 'selected'; ?>>Male</option>
+            <option value="female" <?php if ($gender == 'female') echo 'selected'; ?>>Female</option>
+            <option value="other" <?php if ($gender == 'other') echo 'selected'; ?>>Other</option>
+        </select>
+
+        <label for="field">Field of Study:</label>
+        <select id="field" name="field" required>
+            <option value="IT" <?php if ($field == 'IT') echo 'selected'; ?>>IT</option>
+            <option value="CS" <?php if ($field == 'CS') echo 'selected'; ?>>Computer Science</option>
+            <option value="IS" <?php if ($field == 'IS') echo 'selected'; ?>>Information Systems</option>
+            <option value="SE" <?php if ($field == 'SE') echo 'selected'; ?>>Software Engineering</option>
+        </select>
+    </form>
+
+    <h1>File Management</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="fileToUpload">Upload File:</label>
+        <input type="file" name="fileToUpload" id="fileToUpload" required>
+        <button type="submit" name="upload">Upload</button>
+    </form>
+
+    <form method="POST">
+        <label for="filename">Delete File:</label>
+        <input type="text" name="filename" id="filename" placeholder="Enter filename to delete" required>
+        <button type="submit" name="delete">Delete</button>
+    </form>
+
+    <form method="POST">
+        <label for="oldname">Rename File:</label>
+        <input type="text" name="oldname" id="oldname" placeholder="Old filename" required>
+        <input type="text" name="newname" id="newname" placeholder="New filename" required>
+        <button type="submit" name="rename">Rename</button>
+    </form>
+
+    <form method="POST">
+        <label for="filename">Read File:</label>
+        <input type="text" name="filename" id="filename" placeholder="Enter filename to read" required>
+        <button type="submit" name="read">Read</button>
+    </form>
+
+    <form method="POST">
+        <label for="filename">Write to File:</label>
+        <input type="text" name="filename" id="filename" placeholder="Filename" required>
+        <textarea name="content" placeholder="Content to write" required></textarea>
+        <button type="submit" name="write">Write</button>
+    </form>
+
+    <div style="color: green;">
+        <?php echo $file_message; ?>
+    </div>
+
+    <div style="color: red;">
+        <?php 
+        if (!empty($error_message)) {
+            foreach ($error_message as $error) {
+                echo "<p>$error</p>";
+            }
+        }
+        ?>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <button type="submit" form="registrationForm" name="register">Submit Registration</button>
+    </div>
+</body>
+</html>
